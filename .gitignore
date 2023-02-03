@@ -1,0 +1,10 @@
+# Ignore build folders
+bin/
+obj/
+
+# Ignore dependencies
+GlfwWrapper/
+Resources/Libs/
+
+# Ignore misc
+/.vs

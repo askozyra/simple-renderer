@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfClient", "WpfClient\WpfClient.csproj", "{633AF18F-9986-4557-9636-0C4B4F007A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenGLCore", "OpenGLCore\OpenGLCore.csproj", "{EB484746-2C07-4A22-A207-0B86637DBECA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3089DC42-1E14-49A6-9AC7-3422DD6AD281}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreInterface", "CoreInterface\CoreInterface.csproj", "{A5740D51-CD84-40CD-A877-BFD342708317}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{0FE77018-56D6-48E3-87BC-DB9B82D993D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExceptions", "CustomExceptions\CustomExceptions.csproj", "{F44396F8-3858-4626-AFDC-B04CD973AF19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{633AF18F-9986-4557-9636-0C4B4F007A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633AF18F-9986-4557-9636-0C4B4F007A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633AF18F-9986-4557-9636-0C4B4F007A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633AF18F-9986-4557-9636-0C4B4F007A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB484746-2C07-4A22-A207-0B86637DBECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB484746-2C07-4A22-A207-0B86637DBECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB484746-2C07-4A22-A207-0B86637DBECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB484746-2C07-4A22-A207-0B86637DBECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5740D51-CD84-40CD-A877-BFD342708317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5740D51-CD84-40CD-A877-BFD342708317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5740D51-CD84-40CD-A877-BFD342708317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5740D51-CD84-40CD-A877-BFD342708317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE77018-56D6-48E3-87BC-DB9B82D993D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE77018-56D6-48E3-87BC-DB9B82D993D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE77018-56D6-48E3-87BC-DB9B82D993D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE77018-56D6-48E3-87BC-DB9B82D993D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56BC03C7-1DE5-403B-9F38-6A12CCD9F99A}
+	EndGlobalSection
+EndGlobal

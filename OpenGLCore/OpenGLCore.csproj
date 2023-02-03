@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB484746-2C07-4A22-A207-0B86637DBECA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenGLCore</RootNamespace>
+    <AssemblyName>OpenGLCore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlfwWrapper\CharEventArgs.cs" />
+    <Compile Include="GlfwWrapper\ContentScaleEventArgs.cs" />
+    <Compile Include="GlfwWrapper\Delegates.cs" />
+    <Compile Include="GlfwWrapper\Enums\ClientApi.cs" />
+    <Compile Include="GlfwWrapper\Enums\ConnectionStatus.cs" />
+    <Compile Include="GlfwWrapper\Enums\Constants.cs" />
+    <Compile Include="GlfwWrapper\Enums\ContextApi.cs" />
+    <Compile Include="GlfwWrapper\Enums\ContextAttributes.cs" />
+    <Compile Include="GlfwWrapper\Enums\CursorMode.cs" />
+    <Compile Include="GlfwWrapper\Enums\CursorType.cs" />
+    <Compile Include="GlfwWrapper\Enums\ErrorCode.cs" />
+    <Compile Include="GlfwWrapper\Enums\GamePadAxis.cs" />
+    <Compile Include="GlfwWrapper\Enums\GamePadButton.cs" />
+    <Compile Include="GlfwWrapper\Enums\GlfwConstants.cs" />
+    <Compile Include="GlfwWrapper\Enums\Hat.cs" />
+    <Compile Include="GlfwWrapper\Enums\Hint.cs" />
+    <Compile Include="GlfwWrapper\Enums\InputMode.cs" />
+    <Compile Include="GlfwWrapper\Enums\InputState.cs" />
+    <Compile Include="GlfwWrapper\Enums\Joystick.cs" />
+    <Compile Include="GlfwWrapper\Enums\Keys.cs" />
+    <Compile Include="GlfwWrapper\Enums\ModifierKeys.cs" />
+    <Compile Include="GlfwWrapper\Enums\MouseButton.cs" />
+    <Compile Include="GlfwWrapper\Enums\Profile.cs" />
+    <Compile Include="GlfwWrapper\Enums\ReleaseBehavior.cs" />
+    <Compile Include="GlfwWrapper\Enums\Robustness.cs" />
+    <Compile Include="GlfwWrapper\Enums\WindowAttribute.cs" />
+    <Compile Include="GlfwWrapper\Exception.cs" />
+    <Compile Include="GlfwWrapper\FileDropEventArgs.cs" />
+    <Compile Include="GlfwWrapper\GameWindow.cs" />
+    <Compile Include="GlfwWrapper\Glfw.cs" />
+    <Compile Include="GlfwWrapper\JetBrains.Annotations.cs" />
+    <Compile Include="GlfwWrapper\KeyEventArgs.cs" />
+    <Compile Include="GlfwWrapper\MaximizeEventArgs.cs" />
+    <Compile Include="GlfwWrapper\MouseButtonEventArgs.cs" />
+    <Compile Include="GlfwWrapper\MouseMoveEventArgs.cs" />
+    <Compile Include="GlfwWrapper\Native.cs" />
+    <Compile Include="GlfwWrapper\NativeWindow.cs" />
+    <Compile Include="GlfwWrapper\OpenGL.cs" />
+    <Compile Include="GlfwWrapper\SizeChangeEventArgs.cs" />
+    <Compile Include="GlfwWrapper\Strings.Designer.cs" />
+    <Compile Include="GlfwWrapper\Structs\Cursor.cs" />
+    <Compile Include="GlfwWrapper\Structs\EGLContext.cs" />
+    <Compile Include="GlfwWrapper\Structs\EGLDisplay.cs" />
+    <Compile Include="GlfwWrapper\Structs\EGLSurface.cs" />
+    <Compile Include="GlfwWrapper\Structs\GamePadState.cs" />
+    <Compile Include="GlfwWrapper\Structs\GammaRamp.cs" />
+    <Compile Include="GlfwWrapper\Structs\GammaRampInternal.cs" />
+    <Compile Include="GlfwWrapper\Structs\GLXContext.cs" />
+    <Compile Include="GlfwWrapper\Structs\HGLRC.cs" />
+    <Compile Include="GlfwWrapper\Structs\Image.cs" />
+    <Compile Include="GlfwWrapper\Structs\Monitor.cs" />
+    <Compile Include="GlfwWrapper\Structs\NSOpenGLContext.cs" />
+    <Compile Include="GlfwWrapper\Structs\OSMesaContext.cs" />
+    <Compile Include="GlfwWrapper\Structs\VideoMode.cs" />
+    <Compile Include="GlfwWrapper\Structs\Window.cs" />
+    <Compile Include="GlfwWrapper\Util.cs" />
+    <Compile Include="GlfwWrapper\Vulkan.cs" />
+    <Compile Include="RenderingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RenderingControl.Designer.cs">
+      <DependentUpon>RenderingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GlfwWrapper\Strings.resx" />
+    <EmbeddedResource Include="RenderingControl.resx">
+      <DependentUpon>RenderingControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreInterface\CoreInterface.csproj">
+      <Project>{a5740d51-cd84-40cd-a877-bfd342708317}</Project>
+      <Name>CoreInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
