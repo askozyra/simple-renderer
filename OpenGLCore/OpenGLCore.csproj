@@ -116,10 +116,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonStructures\CommonStructures.csproj">
+      <Project>{4E9DACFF-E5E2-4311-9299-14986398EF0F}</Project>
+      <Name>CommonStructures</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoreInterface\CoreInterface.csproj">
       <Project>{a5740d51-cd84-40cd-a877-bfd342708317}</Project>
       <Name>CoreInterface</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\shader.frag" />
+    <None Include="Shaders\shader.vert" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

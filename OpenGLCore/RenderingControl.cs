@@ -1,9 +1,13 @@
-﻿using OpenGLCore.GlfwWrapper;
-using OpenGLCore.GlfwWrapper.Enums;
-using OpenGLCore.GlfwWrapper.Structs;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CommonStructures.Geometry.Complex.Meshes;
+using CommonStructures.Geometry.Complex.Shapes;
+using CommonStructures.Geometry.Primitives;
+using OpenGLCore.GlfwWrapper;
+using OpenGLCore.GlfwWrapper.Enums;
+using OpenGLCore.GlfwWrapper.Structs;
 
 namespace OpenGLCore
 {
@@ -11,8 +15,8 @@ namespace OpenGLCore
     {
         private const string _user32Dll = "User32.dll";
 
-        private Window Window { get; set; }
-        private IntPtr hwNative { get; set; }
+        private Window _window { get; set; }
+        private IntPtr _hwNative { get; set; }
 
         public RenderingControl()
         {
@@ -39,12 +43,12 @@ namespace OpenGLCore
 
         private void OpenGLRenderingControl_Destroyed(object sender, EventArgs e)
         {
-            Glfw.SetWindowShouldClose(Window, true);
+            Glfw.SetWindowShouldClose(_window, true);
         }
 
         private void OpenGLRenderingControl_Resize(object sender, EventArgs e)
         {
-            Glfw.SetWindowSize(Window, Width, Height);
+            Glfw.SetWindowSize(_window, Width, Height);
         }
 
         private void OpenGLRenderingControl_Load(object sender, EventArgs e)
@@ -53,9 +57,9 @@ namespace OpenGLCore
             InitWindowHints();
             SetWindowParent();
             InitWindowStyle();
-            ShowWindow(hwNative, 5);
+            ShowWindow(_hwNative, 5);
 
-            Glfw.MakeContextCurrent(Window);
+            Glfw.MakeContextCurrent(_window);
 
             OpenGL.Load(Glfw.GetProcAddress);
         }
@@ -69,41 +73,100 @@ namespace OpenGLCore
 
         private void SetWindowParent()
         {
-            Window = Glfw.CreateWindow(Width, Height, "", Monitor.None, Window.None);
-            hwNative = Native.GetWin32Window(Window);
-            SetParent(hwNative, Handle);
+            _window = Glfw.CreateWindow(Width, Height, "", Monitor.None, Window.None);
+            _hwNative = Native.GetWin32Window(_window);
+            SetParent(_hwNative, Handle);
         }
 
         private void InitWindowStyle()
         {
-            long style = GetWindowLong(hwNative, -16);
+            long style = GetWindowLong(_hwNative, -16);
             style &= ~0x80000000;
             style |= 1073741824;
-            SetWindowLong(hwNative, -16, style);
+            SetWindowLong(_hwNative, -16, style);
         }
 
-        public void StartLoop()
+        public unsafe void StartLoop()
         {
+            // Test data
+            List<Triangle> triangles = new List<Triangle>()
+            {
+                new Triangle(new List<Vertex>()
+                {
+                    new Vertex(new CommonStructures.Math.Geometry.Point(0.5f, 0.5f, 0.2f)),
+                    new Vertex(new CommonStructures.Math.Geometry.Point(0.5f, -0.5f, 0.5f)),
+                    new Vertex(new CommonStructures.Math.Geometry.Point(-1f, -0.5f, 0.0f))
+                })
+            };
+
+            TriangleMesh triangle = new TriangleMesh(triangles);
+
+            var VAO = OpenGL.glGenVertexArray();
+            var VBO = OpenGL.glGenBuffer();
+
+            OpenGL.glBindVertexArray(VAO);
+
+            OpenGL.glBindBuffer(GlfwConstants.GL_ARRAY_BUFFER, VBO);
+
+            List<Vertex> extractedVertices = triangle.ExtractVertices();
+            float[] vertices = new float[extractedVertices.Count * 3];
+
+            for (int i = 0; i < extractedVertices.Count; i++)
+            {
+                int startIndex = i * 3;
+                Vertex extractedVertex = extractedVertices[i];
+
+                vertices[startIndex] = extractedVertex.GetX();
+                vertices[startIndex + 1] = extractedVertex.GetY();
+                vertices[startIndex + 2] = extractedVertex.GetZ();
+            }
+
+            fixed (float* v = &vertices[0])
+            {
+                OpenGL.glBufferData(GlfwConstants.GL_ARRAY_BUFFER, sizeof(float) * vertices.Length, v, GlfwConstants.GL_STATIC_DRAW);
+            }
+
+            OpenGL.glVertexAttribPointer(0, 3, GlfwConstants.GL_FLOAT, false, 3 * sizeof(float), (void*)0);
+            OpenGL.glEnableVertexAttribArray(0);
+
             Glfw.SwapInterval(1);
 
-            while (!Glfw.WindowShouldClose(Window))
+            while (!Glfw.WindowShouldClose(_window))
             {
                 int width, height;
 
-                Glfw.GetFramebufferSize(Window, out width, out height);
+                Glfw.GetFramebufferSize(_window, out width, out height);
 
                 OpenGL.glViewport(0, 0, width, height);
                 OpenGL.glClearColor(
-                    1, 0, 1, 1);
+                    0.2f, 0.2f, 0.2f, 1);
                 OpenGL.glClear(16384 | 256);
 
-                Glfw.SwapBuffers(Window);
+                OpenGL.glDrawArrays(GlfwConstants.GL_TRIANGLES, 0, 3);
+
+                Glfw.SwapBuffers(_window);
 
                 Glfw.PollEvents();
             }
 
-            Glfw.DestroyWindow(Window);
+            Glfw.DestroyWindow(_window);
             Glfw.Terminate();
+        }
+
+        private static float[] PointsListToArray(List<Vertex> list)
+        {
+            float[] result = new float[list.Count * 3];
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                int startIndex = i * 3;
+
+                result[startIndex] = list[i].GetX();
+                result[startIndex + 1] = list[i].GetY();
+                result[startIndex + 2] = list[i].GetZ();
+            }
+
+            return result;
         }
     }
 }

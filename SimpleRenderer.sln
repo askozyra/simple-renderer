@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExceptions", "CustomExceptions\CustomExceptions.csproj", "{F44396F8-3858-4626-AFDC-B04CD973AF19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonStructures", "CommonStructures\CommonStructures.csproj", "{4E9DACFF-E5E2-4311-9299-14986398EF0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F44396F8-3858-4626-AFDC-B04CD973AF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9DACFF-E5E2-4311-9299-14986398EF0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9DACFF-E5E2-4311-9299-14986398EF0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9DACFF-E5E2-4311-9299-14986398EF0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9DACFF-E5E2-4311-9299-14986398EF0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

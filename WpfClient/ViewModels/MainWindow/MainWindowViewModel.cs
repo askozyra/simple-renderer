@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows.Input;
+﻿using OpenGLCore;
+using System;
 using System.ComponentModel;
 using System.Windows.Forms.Integration;
-using OpenGLCore;
-
+using System.Windows.Input;
 using AppWindow = WpfClient.Views.MainWindow.MainWindow;
 using CommandManager = WpfClient.Models.Managers.CommandManager;
 
@@ -33,7 +32,7 @@ namespace WpfClient.ViewModels.MainWindow
             _context.MouseDown += TitleBar_MouseDown;
             _context.MouseDoubleClick += Context_MouseDoubleClick;
         }
-        
+
         private void Context_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
