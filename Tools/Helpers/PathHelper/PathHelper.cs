@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Tools.Helpers
+namespace Tools.Helpers.PathHelper
 {
     public static class PathHelper
     {
@@ -8,12 +8,12 @@ namespace Tools.Helpers
 
         static PathHelper()
         {
-            _solutionFolder = Directory.GetCurrentDirectory();
+            _solutionFolder = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), ProjectDirectory.Solution));
         }
 
         public static string BuildAbsolutePath(string relativePath)
         {
-            return _solutionFolder + relativePath;
+            return Path.GetFullPath(Path.Combine(_solutionFolder, relativePath));
         }
     }
 }

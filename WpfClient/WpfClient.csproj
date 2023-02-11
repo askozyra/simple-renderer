@@ -76,11 +76,13 @@
     </Compile>
     <Compile Include="Models\Commands\Command.cs" />
     <Compile Include="Models\Commands\CommandId.cs" />
+    <Compile Include="Models\Commands\CommandManager.cs" />
     <Compile Include="Models\Commands\Tilebar\CloseWindowCommand.cs" />
     <Compile Include="Models\Commands\Tilebar\MinimizeWindowCommand.cs" />
     <Compile Include="Models\Commands\Tilebar\MinMaxWindowCommand.cs" />
-    <Compile Include="Models\Managers\ShortcutManager.cs" />
+    <Compile Include="Models\Managers\RenderingManager.cs" />
     <Compile Include="Models\Shortcuts\Shortcut.cs" />
+    <Compile Include="Models\Shortcuts\ShortcutManager.cs" />
     <Compile Include="ViewModels\MainWindow\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -96,7 +98,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Managers\CommandManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,5 +137,6 @@
     <Resource Include="icon.ico" />
     <Content Include="Resources\Libs\glfw.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

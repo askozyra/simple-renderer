@@ -57,6 +57,9 @@
     <Compile Include="Misc\Color.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transforms\Transform.cs" />
+    <Compile Include="WorldObjects\Entity.cs" />
+    <Compile Include="WorldObjects\Scenes\Layer.cs" />
+    <Compile Include="WorldObjects\Scenes\Scene.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

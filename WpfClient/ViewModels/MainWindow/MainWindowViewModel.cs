@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Windows.Forms.Integration;
 using System.Windows.Input;
 using AppWindow = WpfClient.Views.MainWindow.MainWindow;
-using CommandManager = WpfClient.Models.Managers.CommandManager;
+using CommandManager = WpfClient.Models.Commands.CommandManager;
 
 namespace WpfClient.ViewModels.MainWindow
 {
@@ -23,6 +23,12 @@ namespace WpfClient.ViewModels.MainWindow
             AttachContextEvents();
 
             InitWinFormsHost();
+            InitManagers();
+        }
+
+        private void InitManagers()
+        {
+            _commandManager = new CommandManager(_context);
         }
 
         private void AttachContextEvents()

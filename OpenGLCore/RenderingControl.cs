@@ -5,9 +5,11 @@ using System.Windows.Forms;
 using CommonStructures.Geometry.Complex.Meshes;
 using CommonStructures.Geometry.Complex.Shapes;
 using CommonStructures.Geometry.Primitives;
+using CommonStructures.Misc;
 using OpenGLCore.GlfwWrapper;
 using OpenGLCore.GlfwWrapper.Enums;
 using OpenGLCore.GlfwWrapper.Structs;
+using OpenGLCore.Shaders;
 
 namespace OpenGLCore
 {
@@ -18,9 +20,13 @@ namespace OpenGLCore
         private Window _window { get; set; }
         private IntPtr _hwNative { get; set; }
 
+        private ShaderManager _shaderManager { get; set; }
+
         public RenderingControl()
         {
             InitializeComponent();
+
+            InitManagers();
         }
 
         [DllImport(_user32Dll)]
@@ -86,6 +92,11 @@ namespace OpenGLCore
             SetWindowLong(_hwNative, -16, style);
         }
 
+        private void InitManagers()
+        {
+            _shaderManager = new ShaderManager();
+        }
+
         public unsafe void StartLoop()
         {
             // Test data
@@ -93,9 +104,9 @@ namespace OpenGLCore
             {
                 new Triangle(new List<Vertex>()
                 {
-                    new Vertex(new CommonStructures.Math.Geometry.Point(0.5f, 0.5f, 0.2f)),
-                    new Vertex(new CommonStructures.Math.Geometry.Point(0.5f, -0.5f, 0.5f)),
-                    new Vertex(new CommonStructures.Math.Geometry.Point(-1f, -0.5f, 0.0f))
+                    new Vertex(new CommonStructures.Math.Geometry.Point(0.5f, 0.5f, 0.2f), new Color(1.0f, 0.7f, 0.8f)),
+                    new Vertex(new CommonStructures.Math.Geometry.Point(0.5f, -0.5f, 0.5f), new Color(0.7f, 1.0f, 0.8f)),
+                    new Vertex(new CommonStructures.Math.Geometry.Point(-1f, -0.5f, 0.0f), new Color(0.8f, 0.7f, 1.0f))
                 })
             };
 
@@ -142,6 +153,9 @@ namespace OpenGLCore
                     0.2f, 0.2f, 0.2f, 1);
                 OpenGL.glClear(16384 | 256);
 
+                OpenGL.glUseProgram(_shaderManager._basicShader);
+
+                OpenGL.glColor3f(triangles[0][0].Color.R, triangles[0][0].Color.G, triangles[0][0].Color.B);
                 OpenGL.glDrawArrays(GlfwConstants.GL_TRIANGLES, 0, 3);
 
                 Glfw.SwapBuffers(_window);
@@ -153,20 +167,5 @@ namespace OpenGLCore
             Glfw.Terminate();
         }
 
-        private static float[] PointsListToArray(List<Vertex> list)
-        {
-            float[] result = new float[list.Count * 3];
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                int startIndex = i * 3;
-
-                result[startIndex] = list[i].GetX();
-                result[startIndex + 1] = list[i].GetY();
-                result[startIndex + 2] = list[i].GetZ();
-            }
-
-            return result;
-        }
     }
 }
