@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GLFW.NET.Custom\GlfwConstants.cs" />
+    <Compile Include="GLFW.NET.Custom\OpenGL.cs" />
     <Compile Include="GLFW.NET\CharEventArgs.cs" />
     <Compile Include="GLFW.NET\ContentScaleEventArgs.cs" />
     <Compile Include="GLFW.NET\Delegates.cs" />
@@ -56,7 +58,6 @@
     <Compile Include="GLFW.NET\Enums\ErrorCode.cs" />
     <Compile Include="GLFW.NET\Enums\GamePadAxis.cs" />
     <Compile Include="GLFW.NET\Enums\GamePadButton.cs" />
-    <Compile Include="GLFW.NET\Enums\GlfwConstants.cs" />
     <Compile Include="GLFW.NET\Enums\Hat.cs" />
     <Compile Include="GLFW.NET\Enums\Hint.cs" />
     <Compile Include="GLFW.NET\Enums\InputMode.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="GLFW.NET\MouseMoveEventArgs.cs" />
     <Compile Include="GLFW.NET\Native.cs" />
     <Compile Include="GLFW.NET\NativeWindow.cs" />
-    <Compile Include="GLFW.NET\OpenGL.cs" />
     <Compile Include="GLFW.NET\SizeChangeEventArgs.cs" />
     <Compile Include="GLFW.NET\Strings.Designer.cs" />
     <Compile Include="GLFW.NET\Structs\Cursor.cs" />
