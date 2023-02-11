@@ -6,9 +6,7 @@ using CommonStructures.Geometry.Complex.Meshes;
 using CommonStructures.Geometry.Complex.Shapes;
 using CommonStructures.Geometry.Primitives;
 using CommonStructures.Misc;
-using OpenGLCore.GlfwWrapper;
-using OpenGLCore.GlfwWrapper.Enums;
-using OpenGLCore.GlfwWrapper.Structs;
+using GLFW;
 using OpenGLCore.Shaders;
 
 namespace OpenGLCore

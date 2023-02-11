@@ -1,5 +1,4 @@
-﻿using OpenGLCore.GlfwWrapper;
-using OpenGLCore.GlfwWrapper.Enums;
+﻿using GLFW;
 using System;
 using System.Collections.Generic;
 using System.IO;
