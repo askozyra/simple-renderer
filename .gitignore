@@ -5,11 +5,11 @@ obj/
 # Ignore dependencies
 Resources/Libs/
 
-!GlfwWrapper/
-GlfwWrapper/*
-!GlfwWrapper/OpenGL.cs
-GlfwWrapper/Enums/*
-!GlfwWrapper/Enums/GlfwConstants.cs
+!GLFW.NET/
+GLFW.NET/*
+!GLFW.NET/OpenGL.cs
+GLFW.NET/Enums/*
+!GLFW.NET/Enums/GlfwConstants.cs
 
 # Ignore misc
 /.vs
