@@ -15,3 +15,79 @@
   <a href="https://github.com/askozyra/simple-renderer/pulls">Request Feature</a>
   </p>
 </p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li>
+          <a href="#installation">Installation</a>
+          <ul>
+            <li><a href="#glfw-binaries">GLFW Binaries</a></li>
+            <li><a href="#glfw-c-wrapper">GLFW C# Wrapper</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+Get the project:
+  ```sh
+  git clone https://github.com/askozyra/simple-renderer
+  ```
+
+### Prerequisites
+
+* [GLFW Binaries](https://www.glfw.org/download.html)
+* [GLFW.NET](https://github.com/ForeverZer0/glfw-net)
+
+### Installation
+
+#### GLFW Binaries
+
+1. Get the binaries from https://www.glfw.org/download.html
+2. Open the corresponding VS version folder
+3. Put file `glfw3.dll` in WpfClient/bin/Debug
+
+#### GLFW C# Wrapper
+
+1. Download zip from https://github.com/ForeverZer0/glfw-net
+2. Export folder `GLFW.NET/` into OpenGLCore project root
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Email: khnu2019@gmail.com
+
+LinkedIn: [askozyra](https://linkedin.com/in/askozyra)
+
+Project Link: [https://github.com/askozyra/simple-renderer][project-url]
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[project-url]: https://github.com/askozyra/simple-renderer
