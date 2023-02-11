@@ -4,7 +4,7 @@ using WpfClient.Models.Commands;
 using WpfClient.Models.Commands.Tilebar;
 using WpfClient.Views.MainWindow;
 
-namespace WpfClient.Models.Managers
+namespace WpfClient.Models.Commands
 {
     class CommandManager
     {

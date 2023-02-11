@@ -7,8 +7,6 @@ namespace WpfClient.Views.MainWindow
     {
         public MainWindow()
         {
-            PathHelper.BuildAbsolutePath(string.Empty);
-
             this.InitializeComponent();
         }
     }
