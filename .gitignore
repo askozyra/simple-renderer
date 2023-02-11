@@ -3,8 +3,13 @@ bin/
 obj/
 
 # Ignore dependencies
-GlfwWrapper/
 Resources/Libs/
+
+!GlfwWrapper/
+GlfwWrapper/*
+!GlfwWrapper/OpenGL.cs
+GlfwWrapper/Enums/*
+!GlfwWrapper/Enums/GlfwConstants.cs
 
 # Ignore misc
 /.vs
