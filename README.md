@@ -57,6 +57,8 @@ Get the project:
 
 ### Installation
 
+* If you have any issues while installing the project, follow installing instructions here: [https://github.com/ForeverZer0/glfw-net](https://github.com/ForeverZer0/glfw-net#getting-started)
+
 #### GLFW Binaries
 
 1. Get the binaries from https://www.glfw.org/download.html
