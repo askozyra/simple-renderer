@@ -69,6 +69,7 @@ Get the project:
 
 1. Download zip from https://github.com/ForeverZer0/glfw-net
 2. Export folder `GLFW.NET/` into OpenGLCore project root
+3. Change name of `glfw3.dll` to `glfw.dll`
 
 <!-- CONTRIBUTING -->
 ## Contributing
