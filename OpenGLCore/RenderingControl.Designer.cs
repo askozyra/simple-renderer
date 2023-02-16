@@ -40,7 +40,6 @@ namespace OpenGLCore
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Name = "RenderingControl";
             this.Load += new System.EventHandler(this.OpenGLRenderingControl_Load);
-            this.Resize += new System.EventHandler(this.OpenGLRenderingControl_Resize);
             this.HandleDestroyed += new System.EventHandler(this.OpenGLRenderingControl_Destroyed);
             this.ResumeLayout(false);
         }

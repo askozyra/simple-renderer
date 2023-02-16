@@ -1,10 +1,5 @@
 ﻿using GLFW;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tools.Helpers.PathHelper;
 
 namespace OpenGLCore.Shaders
@@ -12,18 +7,6 @@ namespace OpenGLCore.Shaders
     public class ShaderManager
     {
         public uint _basicShader { get; set; }
-
-        public ShaderManager()
-        {
-        }
-
-        public void InitShaders()
-        {
-            var relativePath = Path.Combine(ProjectDirectory.OpenGLCore, @"Shaders\BasicShader\shader");
-            var basicShaderPath = PathHelper.BuildAbsolutePath(relativePath);
-
-            InitShader(_basicShader, basicShaderPath);
-        }
 
         private void InitShader(uint shader, string pathToShader)
         {
@@ -54,6 +37,20 @@ namespace OpenGLCore.Shaders
             OpenGL.glShaderSource(shader, source);
             OpenGL.glCompileShader(shader);
             return shader;
+        }
+
+
+        public void InitShaders()
+        {
+            var relativePath = Path.Combine(ProjectDirectory.OpenGLCore, @"Shaders\BasicShader\shader");
+            var basicShaderPath = PathHelper.BuildAbsolutePath(relativePath);
+
+            InitShader(_basicShader, basicShaderPath);
+        }
+
+        public void SetShader(uint shader)
+        {
+            OpenGL.glUseProgram(shader);
         }
     }
 }

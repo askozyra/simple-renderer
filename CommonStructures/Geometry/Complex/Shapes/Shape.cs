@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CommonStructures.Geometry.Complex.Shapes
 {
-    public abstract class Shape
+    public abstract class Shape : IRenderableObject
     {
         protected List<Vertex> Vertices { get; set; }
 

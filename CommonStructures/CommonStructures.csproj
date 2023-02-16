@@ -47,6 +47,7 @@
     <Compile Include="Geometry\Complex\Shapes\Shape.cs" />
     <Compile Include="Geometry\Complex\Shapes\Squade.cs" />
     <Compile Include="Geometry\Complex\Shapes\Triangle.cs" />
+    <Compile Include="Geometry\IRenderableObject.cs" />
     <Compile Include="Geometry\Primitives\LineSegment.cs" />
     <Compile Include="Geometry\Primitives\Ray.cs" />
     <Compile Include="Geometry\Primitives\Vertex.cs" />

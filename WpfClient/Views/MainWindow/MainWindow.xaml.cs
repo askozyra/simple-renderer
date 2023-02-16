@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using Tools.Helpers;
 
 namespace WpfClient.Views.MainWindow
 {

@@ -1,19 +1,17 @@
-﻿using System;
+﻿using CommonStructures.Geometry.Complex.Meshes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommonStructures.WorldObjects.Scenes
 {
     public class Layer
     {
-        //public List<Mesh> Meshes { get; set; }
-        //public List<Light> Lights { get; set; }
+        private List<Mesh> _meshes { get; set; }
+        //private List<Viewport> _viewports { get; set; }
+        //private List<Light> _lights { get; set; }
 
         public Layer()
         {
-
+            _meshes = new List<Mesh>();
         }
     }
 }
