@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Controls.Primitives;
-using WpfClient.Models.Commands;
 using WpfClient.Models.Commands.Tilebar;
 using WpfClient.Views.MainWindow;
 

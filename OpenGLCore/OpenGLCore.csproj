@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="GLFW.NET.Custom\GlfwConstants.cs" />
     <Compile Include="GLFW.NET.Custom\OpenGL.cs" />
+    <Compile Include="GLFW.NET.Custom\OpenGLWrapper.cs" />
     <Compile Include="GLFW.NET\CharEventArgs.cs" />
     <Compile Include="GLFW.NET\ContentScaleEventArgs.cs" />
     <Compile Include="GLFW.NET\Delegates.cs" />
@@ -100,6 +101,9 @@
     <Compile Include="GLFW.NET\Structs\Window.cs" />
     <Compile Include="GLFW.NET\Util.cs" />
     <Compile Include="GLFW.NET\Vulkan.cs" />
+    <Compile Include="Managers\OpenGLManager.cs" />
+    <Compile Include="Managers\OptionsManager.cs" />
+    <Compile Include="Managers\RenderingManager.cs" />
     <Compile Include="RenderingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

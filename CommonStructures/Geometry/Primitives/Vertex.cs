@@ -3,7 +3,7 @@ using CommonStructures.Misc;
 
 namespace CommonStructures.Geometry.Primitives
 {
-    public class Vertex
+    public class Vertex : IRenderableObject
     {
         public Point Point { get; set; }
         public Color Color { get; set; }

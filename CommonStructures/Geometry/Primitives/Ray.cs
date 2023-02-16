@@ -1,6 +1,6 @@
 ﻿namespace CommonStructures.Geometry.Primitives
 {
-    public class Ray
+    public class Ray : IRenderableObject
     {
     }
 }

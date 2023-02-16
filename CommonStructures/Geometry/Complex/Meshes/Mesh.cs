@@ -1,6 +1,6 @@
 ﻿namespace CommonStructures.Geometry.Complex.Meshes
 {
-    public abstract class Mesh
+    public abstract class Mesh : IRenderableObject
     {
 
     }

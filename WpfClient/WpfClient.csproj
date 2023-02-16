@@ -80,7 +80,6 @@
     <Compile Include="Models\Commands\Tilebar\CloseWindowCommand.cs" />
     <Compile Include="Models\Commands\Tilebar\MinimizeWindowCommand.cs" />
     <Compile Include="Models\Commands\Tilebar\MinMaxWindowCommand.cs" />
-    <Compile Include="Models\Managers\RenderingManager.cs" />
     <Compile Include="Models\Shortcuts\Shortcut.cs" />
     <Compile Include="Models\Shortcuts\ShortcutManager.cs" />
     <Compile Include="ViewModels\MainWindow\MainWindowViewModel.cs" />
@@ -124,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonStructures\CommonStructures.csproj">
+      <Project>{4E9DACFF-E5E2-4311-9299-14986398EF0F}</Project>
+      <Name>CommonStructures</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenGLCore\OpenGLCore.csproj">
       <Project>{eb484746-2c07-4a22-a207-0b86637dbeca}</Project>
       <Name>OpenGLCore</Name>
