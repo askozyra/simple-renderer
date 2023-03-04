@@ -8,6 +8,40 @@ namespace CommonStructures.Geometry.Primitives
         public Point Point { get; set; }
         public Color Color { get; set; }
 
+        public float X
+        {
+            get
+            {
+                return Point.X;
+            }
+            set
+            {
+                Point.X = value;
+            }
+        }
+        public float Y
+        {
+            get
+            {
+                return Point.Y;
+            }
+            set
+            {
+                Point.Y = value;
+            }
+        }
+        public float Z
+        {
+            get
+            {
+                return Point.Z;
+            }
+            set
+            {
+                Point.Z = value;
+            }
+        }
+
         public Vertex()
         {
             Point = new Point();
@@ -18,21 +52,6 @@ namespace CommonStructures.Geometry.Primitives
         {
             Point = point is null ? new Point() : point;
             Color = color is null ? Color.GrayColor : color;
-        }
-
-        public float GetX()
-        {
-            return Point.Coordinates.X;
-        }
-
-        public float GetY()
-        {
-            return Point.Coordinates.Y;
-        }
-
-        public float GetZ()
-        {
-            return Point.Coordinates.Z;
         }
     }
 }

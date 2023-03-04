@@ -13,5 +13,26 @@ namespace CommonStructures.WorldObjects.Scenes
         {
             _meshes = new List<Mesh>();
         }
+
+        public void AddMesh(Mesh mesh)
+        {
+            _meshes.Add(mesh);
+        }
+
+        public void Clear()
+        {
+            _meshes.Clear();
+        }
+
+        public void RemoveMesh(Mesh mesh)
+        {
+            _meshes.Remove(mesh);
+
+        }
+
+        //public void AddRenderableObject(IRenderableObject rObj)
+        //{
+
+        //}
     }
 }

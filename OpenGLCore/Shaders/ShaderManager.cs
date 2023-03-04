@@ -8,6 +8,8 @@ namespace OpenGLCore.Shaders
     {
         public uint _basicShader { get; set; }
 
+        public uint CurrentShader { get; private set; }
+
         private void InitShader(uint shader, string pathToShader)
         {
             var shaderVertex = CreateShader(GlfwConstants.GL_VERTEX_SHADER,
@@ -15,12 +17,12 @@ namespace OpenGLCore.Shaders
             var shaderFragment = CreateShader(GlfwConstants.GL_FRAGMENT_SHADER,
                 LoadShader(PathHelper.BuildAbsolutePath(pathToShader + ".frag")));
 
-            shader = OpenGL.glCreateProgram();
+            _basicShader = OpenGL.glCreateProgram();
 
-            OpenGL.glAttachShader(shader, shaderVertex);
-            OpenGL.glAttachShader(shader, shaderFragment);
+            OpenGL.glAttachShader(_basicShader, shaderVertex);
+            OpenGL.glAttachShader(_basicShader, shaderFragment);
 
-            OpenGL.glLinkProgram(shader);
+            OpenGL.glLinkProgram(_basicShader);
 
             OpenGL.glDeleteShader(shaderVertex);
             OpenGL.glDeleteShader(shaderFragment);
@@ -39,7 +41,6 @@ namespace OpenGLCore.Shaders
             return shader;
         }
 
-
         public void InitShaders()
         {
             var relativePath = Path.Combine(ProjectDirectory.OpenGLCore, @"Shaders\BasicShader\shader");
@@ -51,6 +52,7 @@ namespace OpenGLCore.Shaders
         public void SetShader(uint shader)
         {
             OpenGL.glUseProgram(shader);
+            CurrentShader = shader;
         }
     }
 }

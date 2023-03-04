@@ -33,7 +33,7 @@ namespace OpenGLCore
         {
             this.SuspendLayout();
             // 
-            // OpenGLRenderingControl
+            // RenderingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -41,7 +41,9 @@ namespace OpenGLCore
             this.Name = "RenderingControl";
             this.Load += new System.EventHandler(this.OpenGLRenderingControl_Load);
             this.HandleDestroyed += new System.EventHandler(this.OpenGLRenderingControl_Destroyed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RenderingControl_KeyDown);
             this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Converters\AngleConverter.cs" />
     <Compile Include="Helpers\PathHelper\PathHelper.cs" />
     <Compile Include="Helpers\PathHelper\ProjectDirectory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

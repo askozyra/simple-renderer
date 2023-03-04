@@ -57,9 +57,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0" Background="#222"></Grid>
-                        <Grid Grid.Row="1" Name="OpenGLRenderingControl" Background="#000">
-
-                        </Grid>
+                        <Grid Grid.Row="1" Name="OpenGLRenderingControl" Background="#000"/>
                     </Grid>
                     <Grid Grid.Column="1" Background="#111">
 

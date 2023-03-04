@@ -1,13 +1,9 @@
 ﻿#version 330 core
-out vec4 FragColor;
+out vec4 ResultColor;
 
-in vec3 Normal;  
-in vec3 FragPos;  
-
-uniform vec4 ObjectColor;
-
+in vec4 FragCol;
 
 void main()
 {
-    FragColor = ObjectColor;
+    ResultColor = FragCol;
 }
