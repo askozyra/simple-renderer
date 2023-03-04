@@ -10,9 +10,10 @@ namespace WpfClient.ViewModels.MainWindow
 {
     public class MainWindowViewModel
     {
+        private WindowsFormsHost _winFormsHost;
+
         private CommandManager _commandManager { get; set; }
         private AppWindow _context { get; set; }
-        private WindowsFormsHost _winFormsHost;
         private RenderingControl _renderingContext { get; set; }
 
         public MainWindowViewModel(AppWindow context)
@@ -37,6 +38,12 @@ namespace WpfClient.ViewModels.MainWindow
             _context.Closing += Context_Closing;
             _context.MouseDown += TitleBar_MouseDown;
             _context.MouseDoubleClick += Context_MouseDoubleClick;
+            _context.OpenGLRenderingControl.GotFocus += OpenGLRenderingControl_GotFocus;
+        }
+
+        private void OpenGLRenderingControl_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _renderingContext.Focus();
         }
 
         private void Context_MouseDoubleClick(object sender, MouseButtonEventArgs e)

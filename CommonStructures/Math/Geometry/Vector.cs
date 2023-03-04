@@ -1,22 +1,33 @@
-﻿namespace CommonStructures.Math.Geometry
-{
-    public class Vector
-    {
-        public Coordinates Coordinates { get; set; }
+﻿using System;
 
+namespace CommonStructures.Math.Geometry
+{
+    public class Vector : Coordinates, ICloneable
+    {
         public Vector()
         {
-            Coordinates = new Coordinates(w: 0.0f);
+            X = 0.0f;
+            Y = 0.0f;
+            Z = 0.0f;
+            W = 0.0f;
         }
 
         public Vector(Coordinates coords)
-        {
-            Coordinates = new Coordinates(coords, w: 0.0f);
-        }
+            : base(coords)
+        { }
 
         public Vector(float x, float y, float z)
+            : base(x, y, z, 0.0f)
+        { }
+
+        public override bool Equals(object obj)
         {
-            Coordinates = new Coordinates(x, y, z, w: 0.0f);
+            return this == (Coordinates)obj;
+        }
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }

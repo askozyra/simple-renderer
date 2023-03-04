@@ -55,12 +55,26 @@
     <Compile Include="Math\Geometry\Point.cs" />
     <Compile Include="Math\Geometry\Vector.cs" />
     <Compile Include="Math\Matrices\Matrix.cs" />
+    <Compile Include="Math\Quaternions\Quaternion.cs" />
     <Compile Include="Misc\Color.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transforms\Transform.cs" />
+    <Compile Include="Transforms\TransformManager.cs" />
+    <Compile Include="View\Camera\Camera.cs" />
+    <Compile Include="View\Camera\CameraManager.cs" />
+    <Compile Include="View\Viewport\Viewport.cs" />
+    <Compile Include="View\Viewport\ViewportManager.cs" />
     <Compile Include="WorldObjects\Entity.cs" />
-    <Compile Include="WorldObjects\Scenes\Layer.cs" />
-    <Compile Include="WorldObjects\Scenes\Scene.cs" />
+    <Compile Include="WorldObjects\Scenes\Layer\Layer.cs" />
+    <Compile Include="WorldObjects\Scenes\Layer\LayerManager.cs" />
+    <Compile Include="WorldObjects\Scenes\Scene\Scene.cs" />
+    <Compile Include="WorldObjects\Scenes\Scene\SceneManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{0FE77018-56D6-48E3-87BC-DB9B82D993D7}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

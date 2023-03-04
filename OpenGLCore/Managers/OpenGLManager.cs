@@ -39,7 +39,7 @@ namespace OpenGLCore.Managers
 
         private void EnableOpenGLFeatures()
         {
-            OpenGL.glEnable(GlfwConstants.GL_DEPTH);
+            OpenGL.glEnable(GlfwConstants.GL_DEPTH_TEST);
         }
 
         private void SetWindowParent()

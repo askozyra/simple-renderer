@@ -2,17 +2,16 @@
 using CommonStructures.Geometry.Primitives;
 using GLFW;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace OpenGLCore.Managers
 {
     public class RenderingManager
     {
-        List<Mesh> meshes { get; set; }
+        private List<Mesh> _meshes { get; set; }
 
         public RenderingManager()
         {
-            meshes = new List<Mesh>();
+            _meshes = new List<Mesh>();
         }
 
         public unsafe void Draw()
@@ -25,15 +24,19 @@ namespace OpenGLCore.Managers
             OpenGL.glBindBuffer(GlfwConstants.GL_ARRAY_BUFFER, VBO);
 
             List<float> pointsList = new List<float>();
-            foreach (var mesh in meshes)
+            foreach (var mesh in _meshes)
             {
                 List<Vertex> extractedVertices = ((TriangleMesh)mesh).ExtractVertices();
 
                 for (int i = 0; i < extractedVertices.Count; i++)
                 {
-                    pointsList.Add(extractedVertices[i].GetX());
-                    pointsList.Add(extractedVertices[i].GetY());
-                    pointsList.Add(extractedVertices[i].GetZ());
+                    pointsList.Add(extractedVertices[i].X);
+                    pointsList.Add(extractedVertices[i].Y);
+                    pointsList.Add(extractedVertices[i].Z);
+
+                    pointsList.Add(extractedVertices[i].Color.R);
+                    pointsList.Add(extractedVertices[i].Color.G);
+                    pointsList.Add(extractedVertices[i].Color.B);
                 }
             }
 
@@ -44,11 +47,14 @@ namespace OpenGLCore.Managers
                 OpenGL.glBufferData(GlfwConstants.GL_ARRAY_BUFFER, sizeof(float) * pointsArray.Length, v, GlfwConstants.GL_STATIC_DRAW);
             }
 
-            OpenGL.glVertexAttribPointer(0, 3, GlfwConstants.GL_FLOAT, false, 3 * sizeof(float), (void*)0);
+            OpenGL.glVertexAttribPointer(0, 3, GlfwConstants.GL_FLOAT, false, 6 * sizeof(float), (void*)0);
             OpenGL.glEnableVertexAttribArray(0);
 
+            OpenGL.glVertexAttribPointer(1, 3, GlfwConstants.GL_FLOAT, false, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+            OpenGL.glEnableVertexAttribArray(1);
+
             int startIndex = 0;
-            foreach(var mesh in meshes)
+            foreach (var mesh in _meshes)
             {
                 TriangleMesh triangleMesh = (TriangleMesh)mesh;
 
@@ -56,14 +62,14 @@ namespace OpenGLCore.Managers
 
                 OpenGLWrapper.Color3f(triangleMesh.Triangles[0][0].Color);
                 OpenGL.glDrawArrays(GlfwConstants.GL_TRIANGLES, startIndex, countOfPoints);
-                
+
                 startIndex += countOfPoints;
             }
         }
 
         public void AddMesh(Mesh mesh)
         {
-            meshes.Add(mesh);
+            _meshes.Add(mesh);
         }
     }
 }
