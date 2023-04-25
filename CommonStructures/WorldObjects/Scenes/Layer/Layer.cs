@@ -27,12 +27,6 @@ namespace CommonStructures.WorldObjects.Scenes
         public void RemoveMesh(Mesh mesh)
         {
             _meshes.Remove(mesh);
-
         }
-
-        //public void AddRenderableObject(IRenderableObject rObj)
-        //{
-
-        //}
     }
 }

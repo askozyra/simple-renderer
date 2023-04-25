@@ -51,6 +51,54 @@ namespace CommonStructures.Math.Geometry
             this.W += w ?? 0;
         }
 
+        public static Coordinates operator +(Coordinates c, float n)
+        {
+            return new Coordinates(
+                c.X + n,
+                c.Y + n,
+                c.Z + n);
+        }
+
+        public static Coordinates operator -(Coordinates c, float n)
+        {
+            return new Coordinates(
+                c.X - n,
+                c.Y - n,
+                c.Z - n);
+        }
+
+        public static Coordinates operator -(float n, Coordinates c)
+        {
+            return new Coordinates(
+                n - c.X,
+                n - c.Y,
+                n - c.Z);
+        }
+
+        public static Coordinates operator *(Coordinates c, float n)
+        {
+            return new Coordinates(
+                c.X * n,
+                c.Y * n,
+                c.Z * n);
+        }
+
+        public static Coordinates operator /(float n, Coordinates c)
+        {
+            return new Coordinates(
+                n / c.X,
+                n / c.Y,
+                n / c.Z);
+        }
+
+        public static Coordinates operator /(Coordinates c, float n)
+        {
+            return new Coordinates(
+                c.X / n,
+                c.Y / n,
+                c.Z / n);
+        }
+
         public static Coordinates operator +(Coordinates c1, Coordinates c2)
         {
             return new Coordinates(

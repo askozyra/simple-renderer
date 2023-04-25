@@ -42,6 +42,10 @@ namespace OpenGLCore
             this.Load += new System.EventHandler(this.OpenGLRenderingControl_Load);
             this.HandleDestroyed += new System.EventHandler(this.OpenGLRenderingControl_Destroyed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RenderingControl_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RenderingControl_KeyUp);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RenderingControl_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RenderingControl_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RenderingControl_MouseUp);
             this.ResumeLayout(false);
 
         }
