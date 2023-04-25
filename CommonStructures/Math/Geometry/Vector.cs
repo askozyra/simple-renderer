@@ -16,7 +16,7 @@ namespace CommonStructures.Math.Geometry
             : base(coords)
         { }
 
-        public Vector(float x, float y, float z)
+        public Vector(float x = 0.0f, float y = 0.0f, float z = 0.0f)
             : base(x, y, z, 0.0f)
         { }
 

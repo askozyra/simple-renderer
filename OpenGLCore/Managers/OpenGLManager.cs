@@ -8,9 +8,11 @@ namespace OpenGLCore.Managers
     {
         private const string _user32Dll = "User32.dll";
 
-        private Window _window { get; set; }
+        public Window Window { get; private set; }
+
         private IntPtr _hwNative { get; set; }
         private IntPtr _handle { get; set; }
+
 
         [DllImport(_user32Dll)]
         private static extern bool SetCursorPos(int X, int Y);
@@ -44,8 +46,8 @@ namespace OpenGLCore.Managers
 
         private void SetWindowParent()
         {
-            _window = Glfw.CreateWindow(800, 600, "", Monitor.None, Window.None);
-            _hwNative = Native.GetWin32Window(_window);
+            Window = Glfw.CreateWindow(800, 600, "", Monitor.None, Window.None);
+            _hwNative = Native.GetWin32Window(Window);
             SetParent(_hwNative, _handle);
         }
 
@@ -59,12 +61,12 @@ namespace OpenGLCore.Managers
 
         public void SetWindowShouldClose(bool value)
         {
-            Glfw.SetWindowShouldClose(_window, value);
+            Glfw.SetWindowShouldClose(Window, value);
         }
 
         public void SetWindowSize(int width, int height)
         {
-            Glfw.SetWindowSize(_window, width, height);
+            Glfw.SetWindowSize(Window, width, height);
         }
 
         public void Init(IntPtr handle)
@@ -77,7 +79,7 @@ namespace OpenGLCore.Managers
             InitWindowStyle();
             ShowWindow(_hwNative, 5);
 
-            Glfw.MakeContextCurrent(_window);
+            Glfw.MakeContextCurrent(Window);
 
             OpenGL.Load(Glfw.GetProcAddress);
 
@@ -91,13 +93,13 @@ namespace OpenGLCore.Managers
 
         public bool ShouldClose()
         {
-            return Glfw.WindowShouldClose(_window);
+            return Glfw.WindowShouldClose(Window);
         }
 
         public void InitFrame()
         {
             int width, height;
-            Glfw.GetFramebufferSize(_window, out width, out height);
+            Glfw.GetFramebufferSize(Window, out width, out height);
 
             OpenGL.glViewport(0, 0, width, height);
             OpenGLWrapper.ClearColor(OptionsManager.BackgroundColor);
@@ -106,13 +108,13 @@ namespace OpenGLCore.Managers
 
         public void FlushFrame()
         {
-            Glfw.SwapBuffers(_window);
+            Glfw.SwapBuffers(Window);
             Glfw.PollEvents();
         }
 
         public void Terminate()
         {
-            Glfw.DestroyWindow(_window);
+            Glfw.DestroyWindow(Window);
             Glfw.Terminate();
         }
     }
